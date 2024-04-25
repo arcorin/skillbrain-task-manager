@@ -1,6 +1,7 @@
+import React from "react";
 import './TaskCard.css';
-import Badge from '../badge/Badge.js';
-import DateContainer from '../date-container/DateContainer.js';
+import Badge from '../badge/Badge';
+import DateContainer from '../date-container/DateContainer';
 
 function TaskCard(props) {
     let taskId = props.id;
@@ -8,7 +9,7 @@ function TaskCard(props) {
     const handleClick = () => {
         console.log("You just clicked on Card no." + taskId + ".");
         taskId += "Clicked!";
-        
+
     };
     
     return (
