@@ -1,16 +1,32 @@
-import React, { useState } from "react";
+import React/*, { useState }*/ from "react";
 import './TaskCard.css'; 
 import Badge from '../badge/Badge';
-// import DateContainer from '../date-container/DateContainer';
+import DateContainer from '../date-container/DateContainer';
 
 function TaskCard(props) {
-    const [counter, setCounter] = useState(0);
+    // // demonstarate that the value of a variable inside "useState" is changed at a new render... 
+    // // ...(the variable has a new state, its value is saved)
+    // const [counter, setCounter] = useState(0);
 
-    console.log("RENDER " + props.id);
+    // // demonstrate that the value of a variable is the same at a new render
+    // let nr = 0;
+
+    // console.log("RENDER " + counter + " " + props.id);
+    // console.log("nr " + nr);
     
-    const handleClick = () => {
-        setCounter(counter + 1);
-    };
+    // const handleClickAdd = () => {
+    //     setCounter(counter + 1);
+    //     console.log('count', counter);
+    //     nr += 1;
+    // };
+
+    // const handleClickSubtract = () => {
+    //     setCounter(counter - 1);
+    //     console.log('count', counter);
+    //     nr -= 1;
+    // };
+
+    
     
     return (
     <div className="card-wrapper">    
@@ -19,12 +35,13 @@ function TaskCard(props) {
             <Badge status={props.status} />
         </div>
         <div className="card-content">
-            {/* <p>{props.name}</p> */}
-            <p>{counter}</p>
+            <p>{props.name}</p>
+            {/* <p>{counter}</p> */}
         </div>
         <div className="card-footer">
-            <button onClick={handleClick}>INCREMENT</button>
-            {/* <DateContainer date={props.dueDate} />  */}
+            {/* <button onClick={handleClickAdd}>INCREMENT</button>
+            <button onClick={handleClickSubtract}>DECREMENT</button> */}
+            <DateContainer date={props.dueDate} /> 
         </div>
     </div>
     );
